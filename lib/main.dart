@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:u1_300/pages/boton_page.dart';
 import 'package:u1_300/pages/cols_rows_page.dart';
 import 'package:u1_300/pages/home_page.dart';
+import 'package:u1_300/pages/imagenes_page.dart';
+import 'package:u1_300/pages/lista_juegos.dart';
 import 'package:u1_300/pages/lista_page.dart';
 import 'package:u1_300/pages/lista_page2.dart';
 import 'package:u1_300/pages/lista_page3.dart';
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Lista3Page(),
+      home: ListaJuegosPage(),
     );
   }
 }
