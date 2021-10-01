@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:u1_300/pages/boton_page.dart';
+import 'package:u1_300/pages/bottom_nav_page.dart';
 import 'package:u1_300/pages/cols_rows_page.dart';
 import 'package:u1_300/pages/home_page.dart';
 import 'package:u1_300/pages/imagenes_page.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: TabsPage(),
+      home: BottomNavPage(),
     );
   }
 }
