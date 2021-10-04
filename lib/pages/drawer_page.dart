@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:u1_300/pages/drawer/dw_home.dart';
+import 'package:u1_300/pages/drawer/dw_lanzamientos.dart';
+import 'package:u1_300/pages/drawer/dw_naves.dart';
+import 'package:u1_300/pages/drawer/dw_visitantes.dart';
 import 'package:u1_300/pages/tabs/tab_home.dart';
 import 'package:u1_300/pages/tabs/tab_lanzamientos.dart';
 import 'package:u1_300/pages/tabs/tab_naves.dart';
@@ -99,18 +103,37 @@ class DrawerPage extends StatelessWidget {
 
   void _navegar(BuildContext context, int pagina) {
     List<Widget> paginas = [
-      TabsHomePage(),
-      TabsLanzamientosPage(),
-      TabsNavesPage(),
-      TabsVisitantesPage(),
+      DwHomePage(),
+      DwLanzamientosPage(),
+      DwNavesPage(),
+      DwVisitantesPage(),
     ];
 
     final route = new MaterialPageRoute(builder: (context) {
       return paginas[pagina - 1];
     });
 
+    // builder que especifica tiempo de transicion, cambiarla cuando se navega
+    final pageRouteBuilder = new PageRouteBuilder(
+      transitionDuration: Duration(milliseconds: 300),
+      pageBuilder: (context, animation, animationTime) {
+        return paginas[pagina - 1];
+      },
+      transitionsBuilder: (context, animation, animationTime, child) {
+        return SlideTransition(
+          position: Tween(
+            // eje        X  Y , de donde viene la animacion
+            begin: Offset(1, 0), //-1, 1
+            end: Offset(0, 0),
+          ).animate(animation),
+          child: child,
+        );
+      },
+    );
+
     //antes de moverse a la pagina nueva, cierra el Drawer
     Navigator.pop(context);
-    Navigator.push(context, route);
+    //Navigator.push(context, route);
+    Navigator.push(context, pageRouteBuilder);
   }
 }

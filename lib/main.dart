@@ -10,6 +10,7 @@ import 'package:u1_300/pages/lista_page.dart';
 import 'package:u1_300/pages/lista_page2.dart';
 import 'package:u1_300/pages/lista_page3.dart';
 import 'package:u1_300/pages/tabs_page.dart';
+import 'package:u1_300/pages/vid2021_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: DrawerPage(),
+      home: ViD2021Page(),
     );
   }
 }
